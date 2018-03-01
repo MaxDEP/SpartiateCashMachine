@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.machine {
+    border: red 2px solid;
+    background-color: whitesmoke;
+    margin-top: 15%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    height: auto;
+    text-align: center;
+}
+
+.machine>#rouleaux {
+    display: flex;
+    justify-content: center;
+}
+
+#rouleaux>.rouleaux {
+    border: black 1px solid;
+    width: 50px;
+    font-size: 36px;
+}
