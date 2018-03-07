@@ -16,12 +16,22 @@ body {
 
 .machine>#rouleaux {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 #rouleaux>.rouleaux {
+    padding: 7px 0px;
     width: 220px;
-    height: 344px;
+    height: 330px;
     font-size: 36px;
     background-image: url("./media/back_cash.png");
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#rouleaux>.rouleaux>img {
+    width: 180px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
