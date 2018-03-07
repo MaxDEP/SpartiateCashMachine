@@ -20,7 +20,8 @@ body {
 }
 
 #rouleaux>.rouleaux {
-    border: black 1px solid;
-    width: 50px;
+    width: 220px;
+    height: 344px;
     font-size: 36px;
+    background-image: url("./media/back_cash.png");
 }
