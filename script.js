@@ -6,7 +6,7 @@ let img1 = 0,
     img3 = 0;
 let html_points = document.getElementById('points');
 let points = 90;
-let gains = JSON.parse(gains_data);
+let gains_data = gains;
 let amiser = false;
 
 updateVue();
@@ -31,13 +31,21 @@ function jouer() {
     if (amiser) {
         console.log("je joue");
         amiser = false;
-        img1 = Math.floor((Math.random() * 5) + 1);
-        img2 = Math.floor((Math.random() * 5) + 1);
-        img3 = Math.floor((Math.random() * 5) + 1);
+        img1 = Math.floor((Math.random() * 4) + 1);
+        img2 = Math.floor((Math.random() * 4) + 1);
+        img3 = Math.floor((Math.random() * 4) + 1);
         console.log(img1 + " " + img2 + " " + img3);
         updateGains();
         updateVue();
     } else {
         alert("Vous devez miser");
+    }
+}
+
+function updateGains() {
+    for (let suite in gains) {
+        if (gains[suite].img1 == img1 && gains[suite].img2 == img2 && gains[suite].img3 == img3) {
+            points += gains[suite].resultat;
+        }
     }
 }
