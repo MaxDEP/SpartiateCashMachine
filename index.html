@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>  
+
+<body>
     <div id="jeu">
         <div class="machine">
             <h1>SpartiateCashMachine</h1>
@@ -25,16 +27,22 @@
             </div>
             <hr>
             <div class="boutons">
-                <button onclick="jouer();">Bouton</button>
+                <button onclick="jouer();">Jouer</button>
             </div>
 
             <div class="boutons">
-                <button onclick="miser();">Miser</button>
+                <button onclick="miser(1);">Miser</button>
+            </div>
+
+            <div class="boutons">
+                <button onclick="miser(3);">Miser Max</button>
             </div>
             <p id="points">Points : </p>
+            <p id="mise">Mise : </p>
         </div>
     </div>
     <script type="text/javascript" src="gains.js"></script>
     <script type="text/javascript" src="script.js" defer></script>
 </body>
+
 </html>
