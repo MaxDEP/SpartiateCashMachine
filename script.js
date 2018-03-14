@@ -55,12 +55,15 @@ function updateGains() {
     for (let suite in gains) {
         if (gains[suite].img1 == img1 && gains[suite].img2 == img2 && gains[suite].img3 == img3) {
             points += gains[suite].resultat*mise;
-        } else if (img1 == 1 || img2 == 1 || img3 == 1) {
-            if (img1 == 1 && img2 == 1 || img1 == 1 && img3 == 1 || img2 == 1 && img3 == 1) {
-                points += mise * 2 * 2;
-            } else {
-                points += mise * 2;
-            }
         }
     }
+    console.log("Points : " + points + " et la mise " + mise);
+    if (img1 == 1 || img2 == 1 || img3 == 1) {
+        if (img1 == 1 && img2 == 1 || img1 == 1 && img3 == 1 || img2 == 1 && img3 == 1) {
+            points += mise * 2 * 2;
+        } else {
+            points += mise * 2;
+        }
+    }
+    console.log("Points : " + points + " et la mise " + mise);
 }
