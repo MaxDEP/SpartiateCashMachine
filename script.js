@@ -1,17 +1,17 @@
 // Elements HTML
-var html_rouleaux = document.getElementById('rouleaux');
-var html_points = document.getElementById('affichage_points');
-var html_mise = document.getElementById('affichage_mise');
-var html_gains = document.getElementById('gains');
+let html_rouleaux = document.getElementById('rouleaux');
+let html_points = document.getElementById('affichage_points');
+let html_mise = document.getElementById('affichage_mise');
+let html_gains = document.getElementById('gains');
 
 // Variables 
-var rouleaux = [0, 0, 0];
-var points = 90;
-var mise = 0;
-var amiser = false;
-var peutJouer = true;
-var peutActualiser = false;
-var gains = [{
+let rouleaux = [0, 0, 0];
+let points = 90;
+let mise = 0;
+let amiser = false;
+let peutJouer = true;
+let peutActualiser = false;
+let gains = [{
         suite: [2, 2, 2],
         gain: parseInt(html_gains.firstElementChild.firstElementChild.children[1].children[1].innerText)
     },
@@ -24,7 +24,7 @@ var gains = [{
         gain: parseInt(html_gains.firstElementChild.firstElementChild.children[3].children[1].innerText)
     }
 ];
-var images = [
+let images = [
     "./media/cerise.png",
     "./media/seven.png",
     "./media/cloche.png",
