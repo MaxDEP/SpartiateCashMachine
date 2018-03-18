@@ -28,7 +28,7 @@ body {
 
 #rouleaux>.rouleaux {
     padding: 7px 0px;
-    width: 100%;
+    width: 220px;
     height: 330px;
     background-image: url("./media/back_cash.png");
     background-repeat: no-repeat;

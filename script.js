@@ -62,23 +62,23 @@ function updateVue() {
 }*/
 
 function tourni(i){
-    if(i == 60){
+    if(i == 50){
         html_rouleaux.children[2].children[0].src = images[img3 - 1];
         peutJouer = true;
         peutActualiser = false;
         html_points.innerHTML = "<p>" + points + "</p>";
-    }else if(i >= 50){
+    }else if(i >= 40){
         let img3_tourni = Math.floor((Math.random() * 5) + 1);
         html_rouleaux.children[2].children[0].src = images[img3_tourni - 1];
         html_rouleaux.children[1].children[0].src = images[img2 - 1];
-        setTimeout(tourni, 400, i+1);
-    }else if(i >= 30){
+        setTimeout(tourni, 350, i+1);
+    }else if(i >= 25){
         let img2_tourni = Math.floor((Math.random() * 5) + 1);
         let img3_tourni = Math.floor((Math.random() * 5) + 1);
         html_rouleaux.children[1].children[0].src = images[img2_tourni - 1];
         html_rouleaux.children[2].children[0].src = images[img3_tourni - 1];
         html_rouleaux.children[0].children[0].src = images[img1 - 1];
-        setTimeout(tourni, 250, i+1);
+        setTimeout(tourni, 275, i+1);
     }else{
         let img1_tourni = Math.floor((Math.random() * 5) + 1);
         let img2_tourni = Math.floor((Math.random() * 5) + 1);
@@ -86,7 +86,7 @@ function tourni(i){
         html_rouleaux.children[0].children[0].src = images[img1_tourni - 1];
         html_rouleaux.children[1].children[0].src = images[img2_tourni - 1];
         html_rouleaux.children[2].children[0].src = images[img3_tourni - 1];
-        setTimeout(tourni, 100, i+1);
+        setTimeout(tourni, 150, i+1);
     }
 }
 
