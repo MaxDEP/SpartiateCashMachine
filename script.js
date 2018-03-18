@@ -1,25 +1,38 @@
-'use strict';
+// Elements HTML
+var html_rouleaux = document.getElementById('rouleaux');
+var html_points = document.getElementById('affichage_points');
+var html_mise = document.getElementById('affichage_mise');
+var html_gains = document.getElementById('gains');
 
-let html_rouleaux = document.getElementById('rouleaux');
-let html_points = document.getElementById('affichage_points');
-let html_mise = document.getElementById('affichage_mise');
-let img1 = 0,
-    img2 = 0,
-    img3 = 0;
-let points = 90;
-let mise = 0;
-let gains_data = gains;
-let amiser = false;
-let images = [
+// Variables 
+var rouleaux = [0, 0, 0];
+var points = 90;
+var mise = 0;
+var amiser = false;
+var peutJouer = true;
+var peutActualiser = false;
+var gains = [{
+        suite: [2, 2, 2],
+        gain: parseInt(html_gains.firstElementChild.firstElementChild.children[1].children[1].innerText)
+    },
+    {
+        suite: [3, 3, 3],
+        gain: parseInt(html_gains.firstElementChild.firstElementChild.children[2].children[1].innerText)
+    },
+    {
+        suite: [4, 4, 4],
+        gain: parseInt(html_gains.firstElementChild.firstElementChild.children[3].children[1].innerText)
+    }
+];
+var images = [
     "./media/cerise.png",
     "./media/seven.png",
     "./media/cloche.png",
     "./media/bar.png",
     "./media/croix.png"
-]
-let peutJouer = true;
-let peutActualiser = false;
+];
 
+// Images random dans les rouleux
 function tourni() {
     let img1_tourni = Math.floor((Math.random() * 5) + 1);
     let img2_tourni = Math.floor((Math.random() * 5) + 1);
@@ -29,8 +42,9 @@ function tourni() {
     html_rouleaux.children[2].children[0].src = images[img3_tourni - 1];
 }
 
+// Met à jour les éléments 
 function updateVue() {
-    if(!peutActualiser) {
+    if (!peutActualiser) {
         html_mise.innerHTML = "<p>" + mise + "</p>";
     } else {
         html_mise.innerHTML = "<p>" + mise + "</p>";
@@ -47,6 +61,7 @@ function updateVue() {
     }
 }
 
+// Mise max et joue
 function miserMax() {
     amiser = true;
     mise = 3;
@@ -58,6 +73,7 @@ function miserMax() {
     }
 }
 
+// Mise
 function miser() {
     amiser = true;
     mise++;
@@ -68,6 +84,7 @@ function miser() {
     peutJouer = true;
 }
 
+// Joue
 function jouer() {
     if (amiser) {
         if (peutJouer) {
@@ -87,23 +104,22 @@ function jouer() {
     }
 }
 
+// Gains en fonction du résultat
 function updateGains() {
-    for (let suite in gains) {
-        if (gains[suite].img1 == img1 && gains[suite].img2 == img2 && gains[suite].img3 == img3) {
-            points += gains[suite].resultat * mise;
+    console.log("Points : " + points + " et la mise " + mise);
+    if (img1 == img2 && img3 == img2) {
+        for (let suite in gains) {
+            if (gains[suite].img1 == img1 && gains[suite].img2 == img2 && gains[suite].img3 == img3) {
+                points += gains[suite].resultat * mise;
+            }
         }
     }
-    console.log("Points : " + points + " et la mise " + mise);
-    if (img1 == 1 || img2 == 1 || img3 == 1) {
-        if (img1 == 1 && img2 == 1 || img1 == 1 && img3 == 1 || img2 == 1 && img3 == 1) {
-            points += mise * 2 * 2;
-        } else {
-            points += mise * 2;
-        }
+    if (img1 == 1 && img2 == 1 && img3 == 1) {
+        points += mise * 2 * 2 * 2;
+    } else if (img1 == 1 && img2 == 1 || img1 == 1 && img3 == 1 || img2 == 1 && img3 == 1) {
+        points += mise * 2 * 2;
+    } else {
+        points += mise * 2;
     }
     console.log("Points : " + points + " et la mise " + mise);
-}
-
-function affichage_gains(){
-    
 }
