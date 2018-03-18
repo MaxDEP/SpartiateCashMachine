@@ -118,7 +118,7 @@ function updateGains() {
         points += mise * 2 * 2 * 2;
     } else if (img1 == 1 && img2 == 1 || img1 == 1 && img3 == 1 || img2 == 1 && img3 == 1) {
         points += mise * 2 * 2;
-    } else {
+    } else if (img1 == 1 || img2 == 1 || img3 == 1){
         points += mise * 2;
     }
     console.log("Points : " + points + " et la mise " + mise);
