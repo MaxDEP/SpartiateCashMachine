@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpartiateCashMachine</title>
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
     <div id="jeu">
         <div class="machine">
-            <h1>SpartiateCashMachine</h1>
+            <h1 id="titre">SpartiateCashMachine</h1>
             <div id="rouleaux">
                 <div id="rouleux1" class="rouleaux">
                     <img id="rouleux1_img" src="./media/seven.png" alt="?">
@@ -27,7 +27,9 @@
             <div class="partie_point">
                 <div id="points">
                     <p>Points</p>
-                    <div id="affichage_points"></div>
+                    <div id="affichage_points">
+                        <p>90</p>
+                    </div>
                 </div>
                 <div id="mise">
                     <p>Mise</p>
@@ -48,10 +50,45 @@
                     <button onclick="miserMax();">Miser Max</button>
                 </div>
             </div>
+            <hr>
+            <div id="gains">
+                <table>
+                    <tr>
+                        <th>Mise</th>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <th>Triple 7</th>
+                        <td>100</td>
+                        <td>200</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th>Triple Cloche</th>
+                        <td>30</td>
+                        <td>60</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <th>Triple Bar</th>
+                        <td>10</td>
+                        <td>20</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <th>n Cerise</th>
+                        <td>1x2^n</td>
+                        <td>2x2^n</td>
+                        <td>3x2^n</td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
-    <script type="text/javascript" src="gains.js"></script>
-    <script type="text/javascript" src="script.js" defer></script>
+    <script type="text/javascript" src="./gains.js"></script>
+    <script type="text/javascript" src="./script.js" defer></script>
 </body>
 
 </html>

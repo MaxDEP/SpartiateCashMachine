@@ -103,3 +103,7 @@ function updateGains() {
     }
     console.log("Points : " + points + " et la mise " + mise);
 }
+
+function affichage_gains(){
+    
+}

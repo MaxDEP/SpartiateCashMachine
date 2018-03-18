@@ -8,10 +8,10 @@ body {
 }
 
 .machine {
-    border: silver 2px solid;
+    border: darkgoldenrod 2px solid;
     border-radius: 10px;
     background-color: gold;
-    margin-top: 5%;
+    margin-top: 4%;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -89,7 +89,7 @@ body {
     justify-content: center;
 }
 
-button {
+.partie_boutons button {
     border: grey 5px solid;
     border-radius: 10px;
     padding: 0;
@@ -110,4 +110,25 @@ button:hover {
 
 .points {
     width: 100%;
+}
+
+#tableau_gains {
+    float: right;
+    width: 50px;
+    cursor: pointer;
+}
+
+#titre {
+    display: inline-block;
+}
+
+table {
+    font-size: 25px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    font-size: 32px;
+    border: 5px solid goldenrod;
 }
